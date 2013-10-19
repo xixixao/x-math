@@ -60,6 +60,15 @@ Box.boundingBox = function(var_args) {
 };
 
 
+Box.createAtOffset = function(offset, size) {
+  return new Rect(
+    offset.y,
+    offset.x + size.width,
+    offset.y + size.height,
+    offset.x);
+}
+
+
 Box.createAroundCenter = function(center, size) {
   var w = size.width / 2;
   var h = size.height / 2;
