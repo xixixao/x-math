@@ -80,7 +80,7 @@ Box.prototype.toString = function() {
 };
 
 
-Box.prototype.toString = function() {
+Box.prototype.toJSON = function() {
   return [this.top, this.right, this.bottom, this.left];
 };
 
