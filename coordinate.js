@@ -277,15 +277,6 @@ Coordinate.prototype.squaredMagnitude = function() {
 
 
 /**
- * @return {!Coordinate} This coordinate after scaling.
- * @override
- */
-Coordinate.prototype.scale =
-    /** @type {function(number, number=):!Coordinate} */
-    (Coordinate.prototype.scale);
-
-
-/**
  * Reverses the sign of the vector. Equivalent to scaling the vector by -1.
  * @return {!Coordinate} The inverted vector.
  */

@@ -6,8 +6,6 @@ var Coordinate = require('./coordinate');
 var Size = require('./size');
 var XMath = require('./math');
 
-var Rect = {};
-
 /**
  * Class for representing rectangular regions.
  * @param {number} x Left.
@@ -16,7 +14,7 @@ var Rect = {};
  * @param {number} h Height.
  * @constructor
  */
-Rect = function(x, y, w, h) {
+var Rect = function(x, y, w, h) {
   /**
    * Left
    * @type {number}
@@ -90,6 +88,10 @@ Rect.prototype.toString = function() {
          this.height + 'h)';
 };
 
+
+Rect.prototype.toJSON = function() {
+  return [[this.left, this.top], [this.width, this.height]];
+};
 
 /**
  * Compares rectangles for equality.
@@ -311,6 +313,15 @@ Rect.prototype.contains = function(another) {
            another.y >= this.top &&
            another.y <= this.top + this.height;
   }
+};
+
+
+/**
+ * Returns the offset (top left corner coordinate) of this rectangle.
+ * @return {!Coordinate} The offset of this rectangle.
+ */
+Rect.prototype.offset = function() {
+  return new Coordinate(this.left, this.top);
 };
 
 

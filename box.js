@@ -3,8 +3,6 @@
 
 var Coordinate = require('./coordinate');
 
-var Box = {};
-
 /**
  * Class for representing a box. A box is specified as a top, right, bottom,
  * and left. A box is useful for representing margins and padding.
@@ -15,7 +13,7 @@ var Box = {};
  * @param {number} left Left.
  * @constructor
  */
-Box = function(top, right, bottom, left) {
+var Box = function(top, right, bottom, left) {
   /**
    * Top
    * @type {number}
@@ -79,6 +77,11 @@ Box.prototype.clone = function() {
 Box.prototype.toString = function() {
   return '(' + this.top + 't, ' + this.right + 'r, ' + this.bottom + 'b, ' +
          this.left + 'l)';
+};
+
+
+Box.prototype.toString = function() {
+  return [this.top, this.right, this.bottom, this.left];
 };
 
 
