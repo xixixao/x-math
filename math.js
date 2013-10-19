@@ -73,6 +73,20 @@ XMath.lerp = function(a, b, x) {
 
 
 /**
+ * Returns value between 0 and 1 when x is between a and b. If x is outside
+ * of this range and less then a returns negative, otherwise bigger than 1
+ * ratio.
+ * @param {number} a A number.
+ * @param {number} b A number.
+ * @param {number} x A number.
+ * @return {number} The proportion between a and b that x represents.
+ */
+XMath.ratio = function(a, b, x) {
+  return (x - a) / (b - a);
+};
+
+
+/**
  * Tests whether the two values are equal to each other, within a certain
  * tolerance to adjust for floating pount errors.
  * @param {number} a A number.
