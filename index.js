@@ -1,4 +1,7 @@
 module.exports = {
-  XMath: require('./math'),
-  Coordinate: require('./coordinate')
-}
+  Box: require('./box'),
+  Coordinate: require('./coordinate'),
+  Rect: require('./rect'),
+  Size: require('./size'),
+  XMath: require('./math')
+};
