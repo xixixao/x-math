@@ -1,0 +1,24 @@
+{
+  "name": "x-math",
+  "version": "0.0.0",
+  "description": "Math library inspired by Google Closure library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "math",
+    "google",
+    "closure",
+    "coordinate",
+    "rectangle",
+    "rect",
+    "box",
+    "margin",
+    "padding",
+    "vector",
+    "2d",
+  ],
+  "author": "xixixao",
+  "license": "BSD-2-Clause"
+}
