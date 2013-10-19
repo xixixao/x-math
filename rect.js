@@ -83,7 +83,7 @@ Rect.createAtOffset = function(offset, size) {
 }
 
 
-React.createAroundCenter = function(center, size) {
+Rect.createAroundCenter = function(center, size) {
   return new Rect(center.x - size.width / 2,
                   center.y - size.height / 2,
                   size.width, size.height);
