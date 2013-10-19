@@ -372,28 +372,6 @@ Coordinate.prototype.equals = function(b) {
 
 
 /**
- * Returns the sum of two vectors as a new Vec2.
- * @param {!Coordinate} a The first vector.
- * @param {!Coordinate} b The second vector.
- * @return {!Coordinate} The sum vector.
- */
-Coordinate.sum = function(a, b) {
-  return new Coordinate(a.x + b.x, a.y + b.y);
-};
-
-
-/**
- * Returns the difference between two vectors as a new Vec2.
- * @param {!Coordinate} a The first vector.
- * @param {!Coordinate} b The second vector.
- * @return {!Coordinate} The difference vector.
- */
-Coordinate.difference = function(a, b) {
-  return new Coordinate(a.x - b.x, a.y - b.y);
-};
-
-
-/**
  * Returns the dot-product of two vectors.
  * @param {!Coordinate} a The first vector.
  * @param {!Coordinate} b The second vector.
