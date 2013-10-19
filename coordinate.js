@@ -238,12 +238,10 @@ Coordinate.random = function() {
 
 
 /**
- * Returns a new Vec2 object from a given coordinate.
- * @param {!Coordinate} a The coordinate.
- * @return {!Coordinate} A new vector object.
+ * @return {!Coordinate} A random vector with x and y between 0 and 1.
  */
-Coordinate.fromCoordinate = function(a) {
-  return new Coordinate(a.x, a.y);
+Coordinate.randomPositive = function() {
+  return new Coordinate(Math.random(), Math.random());
 };
 
 
