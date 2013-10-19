@@ -78,6 +78,17 @@ Rect.createFromBox = function(box) {
 };
 
 
+Rect.createAtOffset = function(offset, size) {
+  return new Rect(offset.x, offset.y, size.width, size.height);
+}
+
+
+React.createAroundCenter = function(center, size) {
+  return new Rect(center.x - size.width / 2,
+                  center.y - size.height / 2,
+                  size.width, size.height);
+}
+
 /**
  * Returns a nice string representing size and dimensions of rectangle.
  * @return {string} In the form (50, 73 - 75w x 25h).

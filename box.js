@@ -60,6 +60,49 @@ Box.boundingBox = function(var_args) {
 };
 
 
+Box.createAroundCenter = function(center, size) {
+  var w = size.width / 2;
+  var h = size.height / 2;
+  return new Rect(center.y - h, center.x + w, center.y + h, center.x - w);
+}
+
+
+/**
+ * Returns the top left corner coordinate of the box.
+ * @return {!Coordinate} The offset of this rectangle.
+ */
+Rect.prototype.topLeft = function() {
+  return new Coordinate(this.left, this.top);
+};
+
+
+/**
+ * Returns the top right corner coordinate of the box.
+ * @return {!Coordinate} The offset of this rectangle.
+ */
+Rect.prototype.topRight = function() {
+  return new Coordinate(this.right, this.top);
+};
+
+
+/**
+ * Returns the bottom left corner coordinate of the box.
+ * @return {!Coordinate} The offset of this rectangle.
+ */
+Rect.prototype.bottomLeft = function() {
+  return new Coordinate(this.left, this.bottom);
+};
+
+
+/**
+ * Returns the bottom right corner coordinate of the box.
+ * @return {!Coordinate} The offset of this rectangle.
+ */
+Rect.prototype.bottomRight = function() {
+  return new Coordinate(this.right, this.bottom);
+};
+
+
 /**
  * Creates a copy of the box with the same dimensions.
  * @return {!Box} A clone of this Box.
