@@ -2,6 +2,7 @@
 // http://docs.closure-library.googlecode.com/git/closure_goog_math_coordinate.js.source.html
 
 var XMath = require('./math');
+var Coordinate = require('./coordinate');
 
 /**
  * Class for representing sizes consisting of a width and height. Undefined
@@ -48,6 +49,26 @@ Size.equals = function(a, b) {
  */
 Size.prototype.clone = function() {
   return new Size(this.width, this.height);
+};
+
+/**
+ * Returns a new Coordinate object with its position correspoding to the
+ * width and height of the Size.
+ * @return {!Coordinate} A new Coordinate representation of this Size.
+ */
+Size.prototype.toCoordinate = function() {
+  return new Coordinate(this.width, this.height);
+};
+
+
+/**
+ * Creates a new Size object with its dimensions corresponding to the x and y
+ * position of coordinate.
+ * @param {Coordinate} coordinate A Coordinate.
+ * @return {!Size} A new Size initialized with the coordinate's position.
+ */
+Size.createFromCoordinate = function(coordinate) {
+  return new Size(coordinate.x, coordinate.y);
 };
 
 
