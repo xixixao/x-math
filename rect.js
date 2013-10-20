@@ -328,6 +328,15 @@ Rect.prototype.contains = function(another) {
 
 
 /**
+ * Returns a random coordinate inside this rectangle.
+ * @return {!Coordinate} Random coordinate inside the rectangle.
+ */
+Rect.prototype.randomInside = function() {
+  return new Coordinate(this.left + Math.random() * this.width,
+                        this.top + Math.random() * this.height);
+};
+
+/**
  * Returns the offset (top left corner coordinate) of this rectangle.
  * @return {!Coordinate} The offset of this rectangle.
  */

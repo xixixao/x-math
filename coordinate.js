@@ -319,6 +319,19 @@ Coordinate.prototype.subtract = function(b) {
 
 
 /**
+ * Multiplies each value of this vector with corresponding value of another
+ * vector.
+ * @param {!Coordinate} b The vector to multiply with.
+ * @return {!Coordinate} This vector with {@code b} multiplied with.
+ */
+Coordinate.prototype.multiply = function(b) {
+  this.x *= b.x;
+  this.y *= b.y;
+  return this;
+};
+
+
+/**
  * Rotates this vector in-place by a given angle, specified in radians.
  * @param {number} angle The angle, in radians.
  * @return {!Coordinate} This vector rotated {@code angle} radians.

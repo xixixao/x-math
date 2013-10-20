@@ -61,7 +61,7 @@ Box.boundingBox = function(var_args) {
 
 
 Box.createAtOffset = function(offset, size) {
-  return new Rect(
+  return new Box(
     offset.y,
     offset.x + size.width,
     offset.y + size.height,
@@ -72,7 +72,7 @@ Box.createAtOffset = function(offset, size) {
 Box.createAroundCenter = function(center, size) {
   var w = size.width / 2;
   var h = size.height / 2;
-  return new Rect(center.y - h, center.x + w, center.y + h, center.x - w);
+  return new Box(center.y - h, center.x + w, center.y + h, center.x - w);
 }
 
 
@@ -80,7 +80,7 @@ Box.createAroundCenter = function(center, size) {
  * Returns the top left corner coordinate of the box.
  * @return {!Coordinate} The offset of this rectangle.
  */
-Rect.prototype.topLeft = function() {
+Box.prototype.topLeft = function() {
   return new Coordinate(this.left, this.top);
 };
 
@@ -89,7 +89,7 @@ Rect.prototype.topLeft = function() {
  * Returns the top right corner coordinate of the box.
  * @return {!Coordinate} The offset of this rectangle.
  */
-Rect.prototype.topRight = function() {
+Box.prototype.topRight = function() {
   return new Coordinate(this.right, this.top);
 };
 
@@ -98,7 +98,7 @@ Rect.prototype.topRight = function() {
  * Returns the bottom left corner coordinate of the box.
  * @return {!Coordinate} The offset of this rectangle.
  */
-Rect.prototype.bottomLeft = function() {
+Box.prototype.bottomLeft = function() {
   return new Coordinate(this.left, this.bottom);
 };
 
@@ -107,7 +107,7 @@ Rect.prototype.bottomLeft = function() {
  * Returns the bottom right corner coordinate of the box.
  * @return {!Coordinate} The offset of this rectangle.
  */
-Rect.prototype.bottomRight = function() {
+Box.prototype.bottomRight = function() {
   return new Coordinate(this.right, this.bottom);
 };
 
