@@ -167,7 +167,7 @@ Size.prototype.round = function() {
  * @return {!Size} This Size object after scaling.
  */
 Size.prototype.scale = function(sx, opt_sy) {
-  var sy = goog.isNumber(opt_sy) ? opt_sy : sx;
+  var sy = XMath.isNumber(opt_sy) ? opt_sy : sx;
   this.width *= sx;
   this.height *= sy;
   return this;
