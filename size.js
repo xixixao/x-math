@@ -190,3 +190,4 @@ Size.prototype.scaleToFit = function(target) {
   return this.scale(s);
 };
 
+module.exports = Size;

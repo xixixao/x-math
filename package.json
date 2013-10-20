@@ -1,6 +1,6 @@
 {
   "name": "x-math",
-  "version": "0.5.0",
+  "version": "0.6.1",
   "description": "Math library inspired by Google Closure library",
   "main": "index.js",
   "scripts": {
