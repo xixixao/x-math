@@ -398,5 +398,44 @@ Coordinate.lerp = function(a, b, x) {
 };
 
 
+/**
+ * Takes two coordinates and returns a new coordinate with x and y set to
+ * max of the originals' x and y.
+ * @param {!Coordinate} a The first coordinate.
+ * @param {!Coordinate} b The second coordinate.
+ * @return {!Coordinate} A maximal coordinate combination of a and b.
+ */
+Coordinate.max = function(a, b) {
+  return new Coordinate(Math.max(a.x, b.x),
+                        Math.max(a.y, b.y));
+};
+
+
+/**
+ * Takes two coordinates and returns a new coordinate with x and y set to
+ * min of the originals' x and y.
+ * @param {!Coordinate} a The first coordinate.
+ * @param {!Coordinate} b The second coordinate.
+ * @return {!Coordinate} A minimal coordinate combination of a and b.
+ */
+Coordinate.min = function(a, b) {
+  return new Coordinate(Math.min(a.x, b.x),
+                        Math.min(a.y, b.y));
+};
+
+
+/**
+ * Takes a coordinate and clamps it to within the provided bounds.
+ * @param {!Coordinate} a The input coordinate.
+ * @param {!Coordinate} min The minimum coordinates to return.
+ * @param {!Coordinate} max The maximum coordinates to return.
+ * @return {!Coordinate} The input coordinate if it is within bounds, or
+ *     the nearest coordinate within the bounds.
+ */
+Coordinate.clamp = function(a, min, max) {
+  return new Coordinate(Math.min(Math.max(a.x, min.x), max.x),
+                        Math.min(Math.max(a.y, min.y), max.y));
+};
+
 
 module.exports = Coordinate;
