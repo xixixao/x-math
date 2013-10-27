@@ -383,6 +383,7 @@ Coordinate.prototype.equals = function(b) {
 Coordinate.prototype.min = function(b) {
   this.x = Math.min(this.x, b.x);
   this.y = Math.min(this.y, b.y);
+  return this;
 };
 
 
@@ -396,6 +397,7 @@ Coordinate.prototype.min = function(b) {
 Coordinate.prototype.max = function(b) {
   this.x = Math.max(this.x, b.x);
   this.y = Math.max(this.y, b.y);
+  return this;
 };
 
 
@@ -409,6 +411,7 @@ Coordinate.prototype.max = function(b) {
 Coordinate.prototype.clamp = function(min, max) {
   this.x = Math.min(Math.max(this.x, min.x), max.x);
   this.y = Math.min(Math.max(this.y, min.y), max.y);
+  return this;
 };
 
 
