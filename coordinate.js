@@ -374,6 +374,45 @@ Coordinate.prototype.equals = function(b) {
 
 
 /**
+ * Sets each value of this coordinate to min of the value and the
+ * corresponding one in given coordinate.
+ * @param {!Coordinate} b A coordinate.
+ * @return {!Coordinate} This coordinate as a minimal coordinate combination
+ *     with b.
+ */
+Coordinate.prototype.min = function(b) {
+  this.x = Math.min(this.x, b.x);
+  this.y = Math.min(this.y, b.y);
+};
+
+
+/**
+ * Sets each value of this coordinate to max of the value and the
+ * corresponding one in given coordinate.
+ * @param {!Coordinate} b The second coordinate.
+ * @return {!Coordinate} This coordinate as a maximal coordinate combination
+ *     with b.
+ */
+Coordinate.prototype.max = function(b) {
+  this.x = Math.max(this.x, b.x);
+  this.y = Math.max(this.y, b.y);
+};
+
+
+/**
+ * Clamps this coordinate within the provided bounds.
+ * @param {!Coordinate} min The minimum coordinates to return.
+ * @param {!Coordinate} max The maximum coordinates to return.
+ * @return {!Coordinate} This coordinate within bounds or
+ *     clamped to the nearest coordinate within the bounds.
+ */
+Coordinate.prototype.clamp = function(min, max) {
+  this.x = Math.min(Math.max(this.x, min.x), max.x);
+  this.y = Math.min(Math.max(this.y, min.y), max.y);
+};
+
+
+/**
  * Returns the dot-product of two vectors.
  * @param {!Coordinate} a The first vector.
  * @param {!Coordinate} b The second vector.
