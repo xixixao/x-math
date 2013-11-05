@@ -191,6 +191,24 @@ Box.prototype.expandToInclude = function(box) {
 
 
 /**
+ * Returns the size of the box.
+ * @return {!Size} The size of the box.
+ */
+Box.prototype.getSize = function() {
+  return new Size(this.right - this.left, this.bottom - this.top);
+};
+
+
+/**
+ * Returns the area of the box.
+ * @return {!Number} The area of the box.
+ */
+Box.prototype.area = function() {
+  return (this.right - this.left) * (this.bottom - this.top);
+};
+
+
+/**
  * Compares boxes for equality.
  * @param {Box} a A Box.
  * @param {Box} b A Box.

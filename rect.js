@@ -336,6 +336,7 @@ Rect.prototype.randomInside = function() {
                         this.top + Math.random() * this.height);
 };
 
+
 /**
  * Returns the offset (top left corner coordinate) of this rectangle.
  * @return {!Coordinate} The offset of this rectangle.
@@ -351,6 +352,15 @@ Rect.prototype.offset = function() {
  */
 Rect.prototype.getSize = function() {
   return new Size(this.width, this.height);
+};
+
+
+/**
+ * Returns the area of this rectangle.
+ * @return {!Number} The area of this rectangle.
+ */
+Rect.prototype.area = function() {
+  return this.width * this.height;
 };
 
 
