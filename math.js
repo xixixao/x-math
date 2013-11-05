@@ -26,6 +26,18 @@ XMath.uniformRandom = function(a, b) {
 
 
 /**
+ * Returns a random integer greater than or equal to {@code a} and less than
+ * {@code b}.
+ * @param {number} a  The lower bound for the random number (floor inclusive).
+ * @param {number} b  The upper bound for the random number (ceil exclusive).
+ * @return {number} A random integer N such that a <= N < b.
+ */
+XMath.uniformRandomInt = function(a, b) {
+  return Math.floor(XMath.uniformRandom(a, b));
+};
+
+
+/**
  * Takes a number and clamps it to within the provided bounds.
  * @param {number} value The input number.
  * @param {number} min The minimum value to return.
