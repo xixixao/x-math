@@ -101,7 +101,7 @@ Rect.prototype.toString = function() {
 
 
 Rect.prototype.toJSON = function() {
-  return [[this.left, this.top], [this.width, this.height]];
+  return [this.left, this.top, this.width, this.height];
 };
 
 /**
