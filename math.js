@@ -307,6 +307,24 @@ XMath.sum = function(var_args) {
 
 
 /**
+ * Returns the sum of values multiplied by a corresponding weight. values and
+ * weights must be arrays with equal length.
+ * @param {Array.number} values Values to add.
+ * @param {Array.number} weights Weights to multiply by.
+ * @return {number} The sum of the values (0 if values is an empty array,
+ *     {@code NaN} if any of the arguments is not a valid number) multiplied
+ *     by weights.
+ */
+XMath.weightedSum = function(values, weights) {
+  var sum = 0;
+  for(var i = 0; i < values.length; ++i) {
+    sum += values[i] * weights[i];
+  }
+  return sum;
+};
+
+
+/**
  * Returns the arithmetic mean of the arguments.
  * @param {...number} var_args Numbers to average.
  * @return {number} The average of the arguments ({@code NaN} if no arguments
@@ -314,6 +332,19 @@ XMath.sum = function(var_args) {
  */
 XMath.average = function(var_args) {
   return XMath.sum.apply(null, arguments) / arguments.length;
+};
+
+
+/**
+ * Returns the weighted arithmetic mean of the values as weighted by weights.
+ * @param {Array.number} values Values to average.
+ * @param {Array.number} weights Weights to multiply by.
+ * @return {number} The average of the values (0 if values is an empty array,
+ *     {@code NaN} if any of the arguments is not a valid number) weighted
+ *     by the weights.
+ */
+XMath.weightedAverage = function(values, weights) {
+  return XMath.weightedSum(values, weights) / values.length;
 };
 
 
